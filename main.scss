@@ -1,0 +1,64 @@
+// Meda Query mixin
+@mixin breakpoint ($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: montserrat, sans-serif;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  min-height: 100vh;
+
+  background-image: url("images/background3.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    background-color: rgba(34, 34, 34, 0.5)
+  }
+
+  .content {
+    position: relative;
+
+    z-index: 1;
+
+    .bear{
+      width: 80%;
+      max-width: 500px;
+      height: auto;
+    }
+    img {
+      width: 60%;
+      height: auto;
+    }
+    div img {
+      align-content: center;
+      width: 4%;
+      height: auto;
+    }
+  }
+}
